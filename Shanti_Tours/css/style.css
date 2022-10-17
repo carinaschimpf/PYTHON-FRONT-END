@@ -1,0 +1,490 @@
+/* Configuraciones globales BEGIN */
+
+* { margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {background-image: url("../img/backgrd13.jpg");}
+
+/* Configuraciones globales END */
+
+/* Logo - BEGIN */
+
+.header-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo - END */
+
+/* Barra de Menu - BEGIN */
+
+.nav {
+  display: flex;
+  background-color: rgba(244, 242, 227, 255);
+  justify-content: space-evenly;
+  top: 0;
+  padding: 1rem;
+  position: sticky;
+  z-index: 100;
+}
+
+.nav ul {display: flex;} 
+
+.nav ul li { 
+  list-style-type: none;
+  padding: 0.1rem 2rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: rgba(127, 0, 55, 255);
+  font-weight: bold;
+  font-size: 1em;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  transition: all 1s ease-out;}
+
+.nav a:hover {
+  color: lightcoral;
+  transform: translateY(100%);
+  transition: 1s;}
+
+#menu, #menu-check {display: none;} /* Menu Hamburguesa */
+
+/* Barra de Menu - END */
+
+/* Carrousel BEGIN */
+
+.slider-frame {
+	width: auto;
+  height: auto;
+	margin: 0px auto 0;
+	overflow: hidden;  
+}
+
+.slider-frame ul {
+	display: flex;
+	padding: 0;
+	width: 400%;	
+	animation: slide 20s infinite alternate ease-in-out;
+}
+
+@keyframes slide {
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+	
+	25% {margin-left: -100%;}
+	45% {margin-left: -100%;}
+	
+	50% {margin-left: -200%;}
+	70% {margin-left: -200%;}
+	
+	75% {margin-left: -300%;}
+	100% {margin-left: -300%;}
+}
+
+.slider-frame li {
+	width: 100%;
+	list-style: none;
+}
+
+.slider-frame img {
+	width: 100%;
+  height: 100%;
+}
+
+/* Carrousel END */
+
+/* Flexbox razones para viajar - BEGIN */
+
+.title-reason {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgba(127, 0, 55, 255);
+  padding-top: 2.5em;
+}
+
+.title-reason p {animation: slidein 3s infinite alternate ease-in-out;}
+
+@keyframes slidein {
+  from {letter-spacing: 0.4rem;}
+  to {letter-spacing: 0.9rem;}
+}
+
+.reason-card { 
+  width: 20%;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.reason-card a {display: inline-block;}
+
+.reason-card:hover aside {
+  transform: perspective(600px) rotateY(180deg);
+  box-shadow: 0px 7px 15px 15px rgba(0, 0, 0, 0.25);
+}
+
+aside {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position: relative;
+  transition: all ease .5s;
+  transform-style: preserve-3d;
+  transform: perspective(600px) rotateY(0deg);
+  border-radius: 2em;
+}
+
+aside .front, aside .back {
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(146, 137, 94, 255);
+  border-radius: 2em;
+  transition: all ease .5s;
+  box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.25);
+}
+
+aside .front {display: block;}
+
+aside .back {
+  position: absolute;
+  top: 0;
+  padding-top: 30%;
+  padding-left: 10%;
+  padding-right: 10%;
+  font-size: 100%;
+  transform: perspective(600px) rotateY(180deg);
+  backface-visibility: hidden; /* para que la cara trasera en 3D quede oculta */
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(244, 242, 227, 255);
+}
+
+aside .back hr {
+  height: 2px;
+  background-color: rgba(127, 0, 55, 255);
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  opacity: .5;
+}
+
+/* Flexbox razones para viajar END */
+
+/* Contenedor principal de tarjetas de viaje BEGIN */
+
+.main-container { 
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-lista { 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 30px 0px;
+}
+
+.travel-card { 
+  background-color: rgba(244, 242, 227, 255);
+  margin: 15px;
+  width: 25%;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.75);
+  transition:all .5s ease-out;
+}
+
+.travel-card:hover { 
+  box-shadow: 17px 21px 24px 0px rgba(0,0,0,0.75);  
+  letter-spacing: 5px;
+  transform: translateY(-10px);
+  transition:all .5s ease-in-out;
+}
+  
+.img-travel { 
+  max-width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;}
+  
+a > p {padding: 15px 0px;}
+
+a {
+  text-decoration: none;
+  color: rgba(127, 0, 55, 255);
+}
+
+/* Contenedor principal de tarjetas de viajes END */
+
+/* Detalle de viaje BEGIN */
+
+.travel-detail {padding: 20px;}
+
+.travel-detail h4 {padding: 0 0 1.5em 0;}
+
+.travel-detail p, .travel-detail h4 {
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  color: rgba(127, 0, 55, 255);
+}
+
+.text-detail {text-decoration: underline;}
+
+.text-return {padding: 1em 0 0.5em}
+
+/* Detalle de viaje END */
+
+/* Acerca de nosotros -  BEGIN */
+
+.about li {
+  padding: 0 0 2rem 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.25rem;
+  color: rgba(127, 0, 55, 255);
+}
+
+.info{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Acerca de nosotros -  END */
+
+/* Politicas de privaciodad BEGIN */
+
+.policies{ 
+  display: flex;
+  background-color: rgba(244, 242, 227, 255);
+}
+
+.policies ul {
+  list-style: none;
+  margin: 0.5em;
+  border: 2px solid rgba(127, 0, 55, 255);
+  border-radius: 0.2em;
+}
+
+.policies ul li {
+  padding: 0.9rem;
+  font-size: 0.95rem;
+  color: rgba(127, 0, 55, 255);
+}
+
+/* Politicas de privaciodad END */
+
+/* Formulario de contacto -  BEGIN */
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+form label {display: block;}
+
+form p {margin: 0;}
+  
+.full-width {grid-column: 1 / 3;}
+
+input, textarea {
+  width: 100%;
+  border: 1px solid black;
+  padding: 1em; 
+  border-radius: 0.25rem;
+}
+
+button {
+  background: rgba(127, 0, 55, 255);
+  width: 100%;
+  border: 0;
+  font-size: 2vh;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 1em; 
+  border-radius: 0.5rem;  
+  transition:all .5s ease-out;}
+  
+button:hover, button:focus {
+  color: #fff;
+  letter-spacing: 1rem;
+  outline: 0;
+  transition:all .5s ease-in-out;}
+
+/* Formulario de contacto -  END */  
+
+/* Formulario de suscripción -  BEGIN */
+
+.footer {width: 100%;}
+
+h3, ul {margin: 0;}
+
+h3 {
+  margin-bottom: 1rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(127, 0, 55, 255);
+}
+
+.wrap-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.wrap-content ul {
+  list-style: none;
+  padding: 1.5em;
+}
+
+.contact-data li {padding-bottom: 5px;}
+
+.contact-data a {transition:all 0.5s ease-in-out;}
+
+.contact-data a:hover {
+  text-decoration: underline;
+  color: black;
+  transition:all 0.5s ease-out;
+}
+
+iframe {padding-top: 20px;}
+
+.cover {width: 100%;}
+  
+.form-data {
+  padding:1.5em; 
+  background: rgba(226,226,226,1);
+}
+
+/* Formulario de suscripción -  END */
+
+/* Datos copyright BEGIN */
+
+.copyrgt {
+  padding: 1em;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  color: rgba(244, 242, 227, 255);
+  text-align: center;}
+
+/* Datos copyright END */
+
+/*---------------------------------------------------*/
+/*-------------- Responsive -------------------------*/
+/*---------------------------------------------------*/
+  
+/* Adaptacion a diferentes dispositivos BEGIN */
+
+@media (max-width: 810px) { 
+  .nav a {font-size: 0.8em;}
+}
+
+@media (max-width: 720px) { 
+
+  .header-logo {justify-content:flex-start;}  
+  
+  @keyframes slidein {
+    from {letter-spacing: 0.1rem;}
+    to {letter-spacing: 0.4rem;}
+  }
+
+  .reason-card {width: 42%;}
+
+  .travel-card {width: 42%;}
+  
+  .travel-card:hover {letter-spacing: 3px;}  
+  
+  .main-container {flex-direction: column;}
+
+  .header-logo {background-color: rgba(244, 242, 227, 255);}
+
+  #menu-check:not(:checked) ~ nav {display: none;}
+
+  #menu-check:checked ~ nav {display: block;}
+  
+  #menu {
+    display: block; 
+    color: black;
+    font-size: 1.2em; 
+    font-weight: bold; 
+    background-color: rgba(244, 242, 227, 255);
+    position: absolute;
+    right: 0.5em;
+    top:0.5em;
+    z-index: 9999;
+  }
+  
+  #menu:hover{background-color: rgba(244, 242, 227, 255);}
+  
+  #menu-close {display: none;}
+
+  #menu-check:checked ~ label #menu-open {display: none;}
+
+  #menu-check:checked ~ label #menu-close {
+    display: block;
+    background-color: black;
+    opacity: 0.8;
+    color: white;
+  }
+
+  .nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%; 
+    border-color: black;
+    padding-top: 0.5em;
+    padding-right: 1.5em;
+    opacity: 0.8;
+    background-image: none;
+    background-color:black;
+    color: white;
+  }
+  
+  .nav ul a {color: white;}
+
+  .nav ul {
+    display: block;
+    text-align: right;
+    flex-direction: column;
+  }
+
+  .nav ul li {padding-bottom: 10px;}
+
+  .wrap-content {grid-template-columns: 1fr;}
+
+  aside .back {font-size: 2vh;}
+
+  .logo {
+    width: 50%;
+    height: 50%;
+  }
+}
+    
+@media (max-width: 500px) {
+  button {font-size: 1.8vh;}
+
+  .copyrgt{font-size: 2vh;}
+
+  .title-reason {font-size: .75em;}
+
+  @keyframes slidein {
+    from {letter-spacing: 0.1rem;}
+    to {letter-spacing: 0.26rem;}
+  }
+}
+
+/* Adaptacion a diferentes dispositivos END */

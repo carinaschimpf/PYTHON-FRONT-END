@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/d7ffa1d7e3.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@500&display=swap" rel="stylesheet">        
+        <link rel="shortcut icon" href="./img/shanti_icon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="./js/data.js"></script>
+        <script src="./js/app.js"></script>
+        <title>Shanti Tours</title>
+    </head>
+
+    <body>
+        <!-- Header / Encabezado -->
+        <div class="header-logo">
+            <a href="index.html">
+                <img class="logo" src="./img/logo_shanti_tours.png" alt="logo"/>
+            </a>
+        </div>
+
+        <!-- Menu hamburguesa -->
+        <input type="checkbox" id="menu-check" style="width: auto;">
+        <label id="menu" for="menu-check" style="width: auto;">
+            <span id="menu-open">&#9776;</span>
+            <span id="menu-close">X</span></label>
+        </label>
+
+        <!-- Nav / Barra de Navegacion en Flexbox -->
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html"><span>Home</span></a></li>
+                <li><a href="aboutus.html"><span>Quienes Somos</span></a></li>
+                <li><a href="travels.html"><span>Nuestros Viajes</span></a></li>
+                <li><a href="contact.html"><span>Contacto</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Detalle de viajes -->
+        <main id="main-detail" class="wrap-content">
+            <script>
+                travelDetail(selectDetail("viewDetail"));
+            </script>
+        </main>
+                
+        <!-- Footer / Pie d pagina -->
+        <footer class="footer">
+            <!-- Copyright -->
+            <div class="copyrgt full-width">         
+                <p>Copyright 2022 Shanti Tours - Powered by Carina Schimpf. Todos los derechos reservados</p>
+            </div>
+        </footer>
+    </body>
+</html>

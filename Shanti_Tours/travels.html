@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/d7ffa1d7e3.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@500&display=swap" rel="stylesheet">        
+        <link rel="shortcut icon" href="./img/shanti_icon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="./js/data.js"></script>
+        <script src="./js/app.js"></script>
+        <title>Shanti Tours</title>
+    </head>
+
+    <body>
+        <!-- Header / Encabezado -->
+        <div class="header-logo">
+            <a href="index.html">
+                <img class="logo" src="./img/logo_shanti_tours.png" alt="logo"/>
+            </a>
+        </div>
+
+        <!-- Menu hamburguesa -->
+        <input type="checkbox" id="menu-check" style="width: auto;">
+        <label id="menu" for="menu-check" style="width: auto;">
+            <span id="menu-open">&#9776;</span>
+            <span id="menu-close">X</span></label>
+        </label>
+
+        <!-- Nav / Barra de Navegacion en Flexbox -->
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html"><span>Home</span></a></li>
+                <li><a href="aboutus.html"><span>Quienes Somos</span></a></li>
+                <li><a href="travels.html"><span>Nuestros Viajes</span></a></li>
+                <li><a href="contact.html"><span>Contacto</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <main id="main-travel" class="main-container">     
+            <script>
+                document.getElementById("main-travel").innerHTML=travelCard();
+            </script>
+        </main>
+        
+        <!-- Footer / Pie de pagina -->
+        <footer class="footer">
+            <div class="wrap-content full-width">
+                <!-- Datos de la empresa -->
+                <div class="contact-data">
+                    <ul>
+                    <li><a href="mailto:info.shantitours@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> info-shantitours@gmail.com</a></li>
+                    <li><a href="https://goo.gl/maps/71C66D1ScGZqf6pX9" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i> Avenida Directorio 2719</a></li>
+                    <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> +54 11 3434-5858</a></li>
+                    <li><a href="https://web.whatsapp.com/send?phone=+5491130929221" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i> +54 9 11 3092-9221</a></li>                                
+                    <li><a href="https://www.facebook.com/carina.schimpf" target="_blank"><i class="fa fa-facebook-f"></i> carina_schimpf</a></li>
+                    <li><a href="https://www.instagram.com/cari_fs/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> cari_fs</a></li>
+                </ul>
+                </div>
+                <!-- Formulario de suscripcion -->
+                <div class="form-data">
+                    <h3>Suscribite y recibí todas nuestras novedades</h3>
+                    <form id="svalida">
+                        <p><input type="text" name="s_nombre" id="s_name" placeholder="Nombre"></p>
+                        <p><input type="email" name="s_email" id="s_email" placeholder="Email"></p>
+                        <p class="full-width"><label for="checkbox" style="width: auto;" type="text" name="answer"><input style="width:auto" type="checkbox" unchecked name="s_agreement" id="s_agreement"> He leído y acepto las <a href="javascript:policies()">políticas de privacidad</a></label></p>
+                        <p class="full-width"><button type="submit">Quiero suscribirme</button></p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyrgt full-width">                    
+                <p>Copyright 2022 Shanti Tours - Powered by Carina Schimpf. Todos los derechos reservados</p>
+            </div>
+    </footer>    
+    </body>
+</html>
