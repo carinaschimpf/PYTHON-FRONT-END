@@ -198,7 +198,7 @@ aside .back hr {
   background-color: rgba(244, 242, 227, 255);
   margin: 15px;
   width: 25%;
-  font-size: 13px;
+  font-size: 2vh;
   text-align: center;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -486,7 +486,13 @@ iframe {padding-top: 20px;}
     to {letter-spacing: 0.26rem;}
   }
 
-  aside .back {font-size: 1vh;}
+  aside .back, button, .travel-card {font-size: 1vh;}
+
+  aside .back hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+    
 }
 
 /* Adaptacion a diferentes dispositivos END */
