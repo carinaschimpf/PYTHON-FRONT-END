@@ -160,7 +160,7 @@ aside .back {
   padding-top: 30%;
   padding-left: 10%;
   padding-right: 10%;
-  font-size: 100%;
+  font-size: 2.5vh;
   transform: perspective(600px) rotateY(180deg);
   backface-visibility: hidden; /* para que la cara trasera en 3D quede oculta */
   overflow: auto;
@@ -390,22 +390,49 @@ iframe {padding-top: 20px;}
 
 @media (max-width: 810px) { 
   .nav a {font-size: 0.8em;}
+
+  .travel-card, .reason-card {
+    font-size: 1vh;
+  }
+
+  .wrap-content {grid-template-columns: 1fr;}
+
+  .title-reason {font-size: .75em;}
+
+  @keyframes slidein {
+    from {letter-spacing: 0.1rem;}
+    to {letter-spacing: 0.26rem;}
+  }
+
+  .travel-card:hover {letter-spacing: 2px;}
+
+  button {letter-spacing: 0.5rem;}
+    
+  button:hover, button:focus {
+    transition: none;
+    letter-spacing: 0.5rem;
+  }
+
+  button {transition: none;}
+
+  aside .back, button, .travel-card {font-size: 1vh;}
+
+  aside .back hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
 
-@media (max-width: 720px) { 
+@media (max-width: 760px) { 
 
   .header-logo {justify-content:flex-start;}  
   
-  @keyframes slidein {
-    from {letter-spacing: 0.1rem;}
-    to {letter-spacing: 0.4rem;}
+  .travel-card, .reason-card {
+    font-size: 1vh;
+    width: 42%;
   }
-
-  .reason-card {width: 42%;}
-
-  .travel-card {width: 42%;}
   
-  .travel-card:hover {letter-spacing: 3px;}
+  .travel-card:hover {letter-spacing: 2px;}
   
   .main-container {flex-direction: column;}
 
@@ -464,43 +491,11 @@ iframe {padding-top: 20px;}
 
   .nav ul li {padding-bottom: 10px;}
 
-  .wrap-content {grid-template-columns: 1fr;}
-
-  aside .back {font-size: 2vh;}
-
   .logo {
     width: 50%;
     height: 50%;
   }
-}
-    
-@media (max-width: 500px) {
-  button {font-size: 1.8vh;}
 
   .copyrgt{font-size: 2vh;}
-
-  .title-reason {font-size: .75em;}
-
-  @keyframes slidein {
-    from {letter-spacing: 0.1rem;}
-    to {letter-spacing: 0.26rem;}
-  }
-
-  aside .back, button, .travel-card {font-size: 1vh;}
-
-  aside .back hr {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  button {
-    font-size: 1vh;
-    letter-spacing: 0.5rem;
 }
-    
-  button:hover, button:focus {transition: none;letter-spacing: 0.5rem;}
-
-  button {transition: none;}
-  }
-
 /* Adaptacion a diferentes dispositivos END */
