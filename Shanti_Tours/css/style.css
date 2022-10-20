@@ -417,6 +417,8 @@ iframe {padding-top: 20px;}
 
   aside .back, button, .travel-card {font-size: 1vh;}
 
+  aside .back {padding-top: 25%;}
+
   aside .back hr {
     margin-top: 10px;
     margin-bottom: 10px;
