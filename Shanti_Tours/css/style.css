@@ -405,7 +405,7 @@ iframe {padding-top: 20px;}
 
   .travel-card {width: 42%;}
   
-  .travel-card:hover {letter-spacing: 3px;}  
+  .travel-card:hover {letter-spacing: 3px;}
   
   .main-container {flex-direction: column;}
 
@@ -492,7 +492,15 @@ iframe {padding-top: 20px;}
     margin-top: 10px;
     margin-bottom: 10px;
   }
-    
+
+  button {
+    font-size: 1vh;
+    letter-spacing: 0.5rem;
 }
+    
+  button:hover, button:focus {transition: none;letter-spacing: 0.5rem;}
+
+  button {transition: none;}
+  }
 
 /* Adaptacion a diferentes dispositivos END */
