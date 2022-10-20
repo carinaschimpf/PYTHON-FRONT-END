@@ -17,64 +17,74 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Validacion de Formulario de Consulta
-function validateForm(evento) {
-  evento.preventDefault();
+async function validateForm(event) {
+  event.preventDefault();
   var name = document.getElementById('f_name').value;
+
   if (name.length == 0) {
-    alert('Por favor ingrese su Nombre');
+    swal({title: "", text: "Por favor ingrese su Nombre", icon:"warning"})
     return;
   }
 
   var email = document.getElementById('f_email').value;
   if (email.length == 0) {
-    alert('Por favor ingrese su E-mail');
+    swal({title: "", text: "Por favor ingrese su E-mail", icon:"warning"})
     return;
   }
 
   var message = document.getElementById('f_message').value;
   if (message.length == 0) {
-    alert('Por favor ingrese su Mensaje');
+    swal({title: "", text: "Por favor ingrese su Mensaje", icon:"warning"})
     return;
   }
 
   var policies = document.getElementById('f_agreement').checked;
   if (policies == false) {
-    alert('Debe aceptar políticas de privacidad');
+    swal({title: "", text: "Debe aceptar políticas de privacidad", icon:"warning"})
     return;
   }
 
-  alert("¡Gracias! Su consulta fue enviada. Le responderemos a la brevedad");
-  this.submit();
+  const form = new FormData(this)
+  const response = await fetch(this.action, {
+    method: this.method,
+    body:form,
+    headers: {'Accept':'application/json'}
+  })
+
+  if(response.ok){
+    swal({title: "¡Gracias por escribirnos!", text: "Te responderemos a la brevedad", icon:"success"})
+    this.reset()
+  }
 }
 
 // Validacion de Formulario de Suscripcion
-function validateSuscrip(evento) {
-  evento.preventDefault();
+function validateSuscrip(event) {
+  event.preventDefault();
   var name = document.getElementById('s_name').value;
   if (name.length == 0) {
-    alert('Por favor ingrese su Nombre');
+    swal({title: "", text: "Por favor ingrese su Nombre", icon:"warning"})
     return;
   }
 
   var email = document.getElementById('s_email').value;
   if (email.length == 0) {
-    alert('Por favor ingrese su E-mail');
+    swal({title: "", text: "Por favor ingrese su E-mail", icon:"warning"})
     return;
   }
 
   var policies = document.getElementById('s_agreement').checked;
   if (policies == false) {
-    alert('Debe aceptar políticas de privacidad');
+    swal({title: "", text: "Debe aceptar políticas de privacidad", icon:"warning"})
     return;
   }
 
-  alert("¡Gracias por suscribirte!");
-  this.submit();
+  swal({title: "¡Gracias por suscribirte!", text: "", icon:"success"})
+  this.reset()
 }
 
 // Tarjeta de viaje: la función crea el HTML recorriendo el array data_travel almacenado en data.js
 function travelCard() {
-  var card=`    
+  var card=`
     <div class="main-lista">
     `
     for(let i=0; i< data_travel.length ; i++)
@@ -97,7 +107,6 @@ function travelCard() {
 // Obtener parametros de url: recupera el valor del parámetro VIEWDETAIL de la url para crear el HTML de detalle de viajes
 var url = window.location.href; //Recupera el valor de la url actual
 url = url.toUpperCase(); //Convierte url a mayusculas
-// console.log(url);
 
 function selectDetail(variable) //Función para obtener el valor de la variable VIEWDETAIL
 {
@@ -138,4 +147,52 @@ var detail=`
   </div>
   `
   return(document.getElementById("main-detail").innerHTML=detail)
+}
+
+// Tarjeta de razones para viajar: la función crea el HTML recorriendo el array data_reason almacenado en data.js
+function reasonCard() {
+  var reason=`
+    <div class="title-reason"><p>¡descubrí por que viajar con nosotros!</p></div>
+    <div class="main-container">
+      <div class="main-lista">
+    `
+    for(let i=0; i< data_reason.length ; i++)
+    {
+      reason += `
+        <div class="reason-card">
+          <a href="contact.html">                        
+              <aside>
+                  <img class="front" src="./img/fondo_card_buda.jpg" alt="reason"/>
+                  <section class="back">
+                      <h2>${data_reason[i].reasonName}</h2>
+                      <hr>
+                      <p>${data_reason[i].reasonDetail}</p>
+                  </section>
+              </aside>
+          </a>
+        </div>
+    `
+    }       
+    reason+=`
+      </div>
+    </div>
+  `
+  return(reason)
+}
+
+// Carrousel
+function carrousel(){
+  var carrousel= `
+              <ul>
+              `
+              for(let i=0; i<6; i++)
+              {
+              carrousel+= `
+                <li><img src="./img/slide_1.jpg" alt=""></li>
+              `
+              }
+              carrousel+= `  
+            </ul>
+            `
+  return(carrousel)
 }

@@ -485,6 +485,8 @@ iframe {padding-top: 20px;}
     from {letter-spacing: 0.1rem;}
     to {letter-spacing: 0.26rem;}
   }
+
+  aside .back {font-size: 1vh;}
 }
 
 /* Adaptacion a diferentes dispositivos END */

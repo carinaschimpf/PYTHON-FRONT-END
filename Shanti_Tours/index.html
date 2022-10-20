@@ -32,7 +32,7 @@
         <!----- Nav / Barra de Navegacion ------>
         <nav class="nav">
             <ul class="menu-max">
-                <li><a href="index.html"><span>Home</span></a></li>
+                <li><a href="index.html"><span>Inicio</span></a></li>
                 <li><a href="aboutus.html"><span>Quienes Somos</span></a></li>
                 <li><a href="travels.html"><span>Nuestros Viajes</span></a></li>
                 <li><a href="contact.html"><span>Contacto</span></a></li>
@@ -40,105 +40,49 @@
         </nav>
 
         <!-- Carrousel -->
-        <div class="slider-frame">
-            <ul>               
-                <li><img src="./img/slide_1.jpg" alt=""></li>
-                <li><img src="./img/slide_1.jpg" alt=""></li>
-                <li><img src="./img/slide_1.jpg" alt=""></li>
-                <li><img src="./img/slide_1.jpg" alt=""></li>
-                <li><img src="./img/slide_1.jpg" alt=""></li>
-                <li><img src="./img/slide_1.jpg" alt=""></li>
-            </ul>
+        <div id="slider-frame" class="slider-frame">            
+            <script>
+                document.getElementById("slider-frame").innerHTML=carrousel();
+            </script>
         </div>
 
-    <!-- Main -->
-    <main>
-        <div class="title-reason"><p>¡descubrí por que viajar con nosotros!</p></div>
-        <div class="main-container">
-            <div class="main-lista">
-                <div class="reason-card">
-                    <a href="contact.html">                        
-                        <aside>
-                            <img class="front" src="./img/fondo_card_buda.jpg" alt="reason"/>
-                            <section class="back">
-                                <h2>Satisfacción del Cliente</h2>
-                                <hr>
-                                <p>Lo que más nos importa es que disfrutes al máximo de tu viaje, ofreciendoete la mejor atención.</p>
-                            </section>
-                        </aside>
-                    </a>
-                 </div>
-                 <div class="reason-card">
-                    <a href="contact.html">                        
-                        <aside>
-                            <img class="front" src="./img/fondo_card_buda.jpg" alt="reason"/>
-                            <section class="back">
-                                <h2>Grupos reducidos</h2>
-                                <hr>
-                                <p>Organizamos nuestros viajes para un máximo de 10 personas, lo que asegura una mejor experiencia de viaje.</p>
-                            </section>
-                        </aside>
-                    </a>
-                 </div>
-                 <div class="reason-card">
-                    <a href="contact.html">                        
-                        <aside>
-                            <img class="front" src="./img/fondo_card_buda.jpg" alt="reason"/>
-                            <section class="back">
-                                <h2>Destinos espectaculares</h2>
-                                <hr>
-                                <p>Tenemos disponible la mejor selección de viajes exóticos, para que conozcas los destinos más impactantes.</p>
-                            </section>
-                        </aside>
-                    </a>
-                 </div>
-                 <div class="reason-card">
-                    <a href="contact.html">                        
-                        <aside>
-                            <img class="front" src="./img/fondo_card_buda.jpg" alt="reason"/>
-                            <section class="back">
-                                <h2>Vivir el viaje</h2>
-                                <hr>
-                                <p>Ofrecemos viajar de una manera no convencional, conectando con los lugares, la cultura y su gente.</p>
-                            </section>
-                        </aside>
-                    </a>
-                 </div>
-        </div>
-    </main>
+        <!-- Main -->
+        <main id="main-reason">    
+            <script>
+                document.getElementById("main-reason").innerHTML=reasonCard();
+            </script>
+        </main>
 
-    <!-- Footer / Pie de página -->
+        <!-- Footer / Pie de página -->
         <footer class="footer">            
-            <div class="wrap-content full-width">
-
-                <!-- Datos de contacto -->
-                <div class="contact-data">
+            <div class="wrap-content full-width">                
+                <div class="contact-data"> <!-- Datos de contacto -->
                     <ul>
-                        <li><a href="mailto:info.shantitours@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> info-shantitours@gmail.com</a></li>
+                        <li><a href="mailto:carina.schimpf@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> info-shantitours@gmail.com</a></li>
                         <li><a href="https://goo.gl/maps/71C66D1ScGZqf6pX9" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i> Avenida Directorio 2719</a></li>
                         <li><a href=""><i class="fa fa-phone" aria-hidden="true"></i> +54 11 3434-5858</a></li>
                         <li><a href="https://web.whatsapp.com/send?phone=+5491130929221" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i> +54 9 11 3092-9221</a></li>                                
-                        <li><a href="https://www.facebook.com/carina.schimpf" target="_blank"><i class="fa fa-facebook-f"></i> carina_schimpf</a></li>
-                        <li><a href="https://www.instagram.com/cari_fs/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> cari_fs</a></li>
+                        <li><a href="https://www.facebook.com/carina.schimpf" target="_blank"><i class="fa fa-facebook-f"></i> shantitours</a></li>
+                        <li><a href="https://www.instagram.com/cari_fs/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> shantitours</a></li>
                     </ul>
                 </div>
-
-                <!-- Formulario de suscripcion -->
-                <div class="form-data">
+                
+                <div class="form-data"> <!-- Formulario de suscripcion -->
                     <h3>Suscribite y recibí todas nuestras novedades</h3>
                     <form id="svalida">
-                        <p><input type="text" name="s_nombre" id="s_name" placeholder="Nombre"></p>
-                        <p><input type="email" name="s_email" id="s_email" placeholder="Email"></p>
+                        <p><input type="text" name="name" id="s_name" placeholder="Nombre"></p>
+                        <p><input type="email" name="email" id="s_email" placeholder="Email"></p>
                         <p class="full-width"><label for="checkbox" style="width: auto;" type="text" name="answer"><input style="width:auto" type="checkbox" unchecked name="s_agreement" id="s_agreement"> He leído y acepto las <a href="javascript:policies()">políticas de privacidad</a></label></p>
                         <p class="full-width"><button type="submit">Quiero suscribirme</button></p>
                     </form>
                 </div>
             </div>
-                
-            <!-- Copyright -->
-            <div class="copyrgt full-width">                    
+                            
+            <div class="copyrgt full-width"> <!-- Copyright -->
                 <p>Copyright 2022 Shanti Tours - Powered by Carina Schimpf. Todos los derechos reservados</p>
             </div>
         </footer>
+        
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </body>
 </html>

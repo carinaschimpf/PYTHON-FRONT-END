@@ -32,7 +32,7 @@
         <!-- Nav / Barra de Navegacion -->
         <nav class="nav">
             <ul>
-                <li><a href="index.html"><span>Home</span></a></li>
+                <li><a href="index.html"><span>Inicio</span></a></li>
                 <li><a href="aboutus.html"><span>Quienes Somos</span></a></li>
                 <li><a href="travels.html"><span>Nuestros Viajes</span></a></li>
                 <li><a href="contact.html"><span>Contacto</span></a></li>
@@ -40,37 +40,37 @@
         </nav>
 
         <!-- Main -->
-        <main class="wrap-content"> 
-            <!-- Datos de contacto -->
-            <div class="contact-data">
+        <main class="wrap-content">             
+            <div class="contact-data"> <!-- Datos de contacto -->
                 <ul>
-                    <li><a href="mailto:info.shantitours@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> info-shantitours@gmail.com</a></li>
+                    <li><a href="mailto:carina.schimpf@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> info-shantitours@gmail.com</a></li>
                     <li><a href="https://goo.gl/maps/71C66D1ScGZqf6pX9" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i> Avenida Directorio 2719</a></li>
                     <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> +54 11 3434-5858</a></li>
-                    <li><a href="https://web.whatsapp.com/send?phone=+5491130929221" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i> +54 9 11 3092-9221</a></li>                                
+                    <li><a href="https://web.whatsapp.com/send?phone=+5491130929221" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i> +54 9 11 3092-9221</a></li>
                 <li><iframe class="cover" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.7917696993604!2d-58.4674006851941!3d-34.634702066644365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc9871a8b82e3%3A0xaef04c645f9cf1ad!2sAv.%20Directorio%202719%2C%20C1406HAD%20CABA!5e0!3m2!1ses-419!2sar!4v1660959150162!5m2!1ses-419!2sar" style="border:0;" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></li>
                 </ul>
             </div>
-            
-            <!-- Formulario de consukta -->
-            <div class="form-data">
+                        
+            <div class="form-data"> <!-- Formulario de consukta -->
                 <h3>Dejanos tu consulta</h3>
-                <form id="fvalida">
-                    <p><label for="">Nombre</label><input type="text" name="f_name" id="f_name"></p>
-                    <p><label for="">Email</label><input type="text" name="f_email" id="f_email"></p>
-                    <p class="full-width"><label for="">Mensaje</label><textarea name="f_message" id="f_message" cols="30" rows="7"></textarea></p>
+                <form id="fvalida" action="https://formspree.io/f/xaykdddl" method="POST">
+                    <p><label for="">Nombre</label><input type="text" name="name" id="f_name"></p>
+                    <p><label for="">Email</label><input type="text" name="email" id="f_email"></p>
+                    <p class="full-width"><label for="">Mensaje</label><textarea name="message" id="f_message" cols="30" rows="7"></textarea></p>
                     <p class="full-width"><label for="checkbox" style="width: auto;" type="text" name="answer"><input style="width:auto" type="checkbox" unchecked name="f_agreement" id="f_agreement"> He leído y acepto las <a href="javascript:policies()">políticas de privacidad</a></label></p>
                     <p class="full-width"><button type="submit">Enviar</button></p>
                 </form>
+                <a href="mailto:carina_schimpf@hotmail.com" id="idform"></a>
             </div>
         </main>
     
         <!-- Footer / Pie d pagina -->
         <footer class="footer">
-            <!-- Copyright -->
             <div class="copyrgt full-width">         
                 <p>Copyright 2022 Shanti Tours - Powered by Carina Schimpf. Todos los derechos reservados</p>
             </div>
         </footer>
+    
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </body>
 </html>

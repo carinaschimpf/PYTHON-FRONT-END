@@ -54,3 +54,30 @@ var data_travel= [
     travelNights: 14,
     }
 ]
+
+// Array de datos de razones para viajar
+var data_reason= [
+    {
+    id: 0,
+    reasonName: "Satisfacción del Cliente",
+    reasonDetail: "Lo que más nos importa es que disfrutes al máximo de tu viaje, ofreciendoete la mejor atención.",
+    },
+
+    {
+    id: 1,
+    reasonName: "Grupos reducidos",
+    reasonDetail: "Organizamos nuestros viajes para un máximo de 10 personas, lo que asegura una mejor experiencia de viaje.",
+    },
+
+    {
+    id: 2,
+    reasonName: "Destinos espectaculares",
+    reasonDetail: "Tenemos disponible la mejor selección de viajes exóticos, para que conozcas los destinos más impactantes.",
+    },
+
+    {
+    id: 3,
+    reasonName: "Vivir el viaje",
+    reasonDetail: "Ofrecemos viajar de una manera no convencional, conectando con los lugares, la cultura y su gente.",
+    }
+]
