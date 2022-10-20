@@ -426,7 +426,12 @@ iframe {padding-top: 20px;}
 @media (max-width: 760px) { 
 
   .header-logo {justify-content:flex-start;}  
-  
+
+  @keyframes slidein {
+    from {letter-spacing: 0.1rem;}
+    to {letter-spacing: 0.23rem;}
+  }
+
   .travel-card, .reason-card {
     font-size: 1vh;
     width: 42%;
@@ -496,6 +501,6 @@ iframe {padding-top: 20px;}
     height: 50%;
   }
 
-  .copyrgt{font-size: 1vh;}
+  .copyrgt{font-size: 1.5vh;}
 }
 /* Adaptacion a diferentes dispositivos END */

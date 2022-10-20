@@ -160,7 +160,7 @@ function reasonCard() {
     {
       reason += `
         <div class="reason-card">
-          <a href="contact.html">                        
+          <a href="">                        
               <aside>
                   <img class="front" src="./img/fondo_card_buda.jpg" alt="reason"/>
                   <section class="back">
