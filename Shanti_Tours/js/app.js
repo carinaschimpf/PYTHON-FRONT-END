@@ -27,8 +27,11 @@ async function validateForm(event) {
   }
 
   var email = document.getElementById('f_email').value;
-  if (email.length == 0) {
-    swal({title: "", text: "Por favor ingrese su E-mail", icon:"warning"})
+  var atposition = email.indexOf("@");  
+  var dotposition = email.lastIndexOf(".");  
+
+  if (email.length == 0  || atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length) {
+    swal({title: "", text: "Por favor ingrese un E-mail válido", icon:"warning"})
     return;
   }
 
@@ -52,10 +55,10 @@ async function validateForm(event) {
   })
 
   if(response.ok){
-    swal({title: "¡Gracias por escribirnos!", text: "Te responderemos a la brevedad", icon:"success"})
     this.reset()
+    swal({title: "¡Gracias por escribirnos!", text: "Te responderemos a la brevedad", icon:"success"})
   }
-}
+} 
 
 // Validacion de Formulario de Suscripcion
 function validateSuscrip(event) {
