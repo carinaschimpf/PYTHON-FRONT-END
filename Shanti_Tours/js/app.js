@@ -47,15 +47,20 @@ async function validateForm(event) {
     return;
   }
 
+  let _datos = {
+    titulo: "foo",
+    principal: "bar", 
+    Id:1
+  }
+
   const form = new FormData(this)
   const response = await fetch(this.action, {
-    method: this.method,
-    // body:form,
-    headers: {'Accept':'application/json'}
+  method: "POST",
+  body: JSON.stringify(_datos),
+  headers: {"Content-type": "application/json; charset=UTF-8"}
   })
 
   alert(this.action);
-  alert(form);
   alert(response.status);
   alert(response.ok);
 
