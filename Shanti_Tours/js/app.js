@@ -49,8 +49,6 @@ async function validateForm(event) {
 
   var text_msg = document.getElementById('f_text').value;
 
-  var text_msg = msg.substring(0,msg.length);
-
   let _formData = {
     name: name,
     email: email,
