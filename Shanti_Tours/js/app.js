@@ -50,7 +50,7 @@ async function validateForm(event) {
   let _formData = {
     name: name,
     email: email,
-    message: "mensaje constante"
+    message: message
   }
 
   // const form = new FormData(this)
