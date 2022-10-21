@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
 // Validacion de Formulario de Consulta
 async function validateForm(event) {
   event.preventDefault();
+  
   var name = document.getElementById('f_name').value;
-
   if (name.length == 0) {
     swal({title: "", text: "Por favor ingrese su Nombre", icon:"warning"})
     return;
@@ -47,17 +47,17 @@ async function validateForm(event) {
     return;
   }
 
-  const form = new FormData(this)
-  const response = await fetch(this.action, {
-    method: this.method,
+  const form = new FormData(event.target)
+  const response = await fetch(event.target.action, {
+    method: document.getElementById("fvalida").method,
     body:form,
     headers: {'Accept':'application/json'}
   })
 
   if(response.ok){
-    this.reset()
+    document.getElementById("fvalida").reset()
     swal({title: "¡Gracias por escribirnos!", text: "Te responderemos a la brevedad", icon:"success"})
-  }
+  }else{swal({title: "No pudo enviar correo", text: "", icon:"error"})}
 } 
 
 // Validacion de Formulario de Suscripcion

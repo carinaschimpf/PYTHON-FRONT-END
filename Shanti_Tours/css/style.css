@@ -311,20 +311,19 @@ input, textarea {
   border: 0;
   font-size: 2vh;
   font-weight: bold;
-  letter-spacing: .75rem;
+  letter-spacing: 0.5rem;
   text-transform: uppercase;
   color: #fff;
   padding: 1em; 
   border-radius: 0.5rem;  
-  box-shadow: 0px 6px 10px 0px gray;
-  transition: 100ms all ease;
+  transition:all .5s ease-out;
 }
   
-.btn:active {
-  transform: scale(0.98);
-  letter-spacing: 0.5rem;
-  transition: .2s all;
-  box-shadow: 0px 0px 0px 0px gray;
+.btn:hover, .btn:focus {
+  color: #fff;
+  letter-spacing: 1rem;
+  outline: 0;
+  transition:all .5s ease-in-out;
 }
 
 /* Formulario de contacto -  END */  
@@ -409,10 +408,13 @@ iframe {padding-top: 20px;}
 
   .travel-card:hover {letter-spacing: 2px;}
 
-  .btn {letter-spacing: .5rem;}
-    
-  .btn:active {letter-spacing: 0.25rem;}
-  
+  .btn {transition: none;}
+
+  .btn:hover, .btn:focus {
+    transition: none;
+    letter-spacing: 0.5rem;
+  }
+
   aside .back, .btn, .travel-card {font-size: 1vh;}
 
   aside .back {padding-top: 25%;}
