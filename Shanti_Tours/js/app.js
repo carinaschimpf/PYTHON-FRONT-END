@@ -20,13 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
 async function validateForm(event) {
   event.preventDefault();
   
-  var name = document.getElementById('f_name').value;
+  var name = document.getElementById('name').value;
   if (name.length == 0) {
     swal({title: "", text: "Por favor ingrese su Nombre", icon:"warning"})
     return;
   }
 
-  var email = document.getElementById('f_email').value;
+  var email = document.getElementById('email').value;
   var atposition = email.indexOf("@");  
   var dotposition = email.lastIndexOf(".");  
 
@@ -35,7 +35,7 @@ async function validateForm(event) {
     return;
   }
 
-  var msg = document.getElementById('f_message').value;
+  var msg = document.getElementById('message').value;
   if (msg.length == 0) {
     swal({title: "", text: "Por favor ingrese su Mensaje", icon:"warning"})
     return;
@@ -55,12 +55,13 @@ async function validateForm(event) {
 
   alert(msg);
 
-  // const form = new FormData(this)
+  const form = new FormData(this)
   const response = await fetch(this.action, {
     method: this.method, 
-    // body: form, 
-    body: JSON.stringify(_formData),
-    headers: {"Content-type": "application/json; charset=UTF-8"}})
+    body: form, 
+    // body: JSON.stringify(_formData),
+    // headers: {"Content-type": "application/json; charset=UTF-8"}})
+    headers: {"Accept": "application/json; charset=UTF-8"}})
 
   alert(response.status);
   alert(response.ok);
