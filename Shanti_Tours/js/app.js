@@ -57,7 +57,7 @@ async function validateForm(event) {
 
   form.name = _formData.nombre;
   form.email = _formData.correo;
-  form.message = _formData.mensaje;
+  form.message = "jdhfjadjbvjf rvrbdfdsgfdghrbdf nds vf mf mnbfjnjdkfhjsdfhavsbhfbdbfdj";
 
   alert(form.message);
 
