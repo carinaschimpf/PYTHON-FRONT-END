@@ -7,12 +7,12 @@ function policies() {
 
 // Validaciones de formularios de consulta y suscripcion
 document.addEventListener("DOMContentLoaded", function () {
-  if (document.getElementById("fvalida") != null) {
-    document.getElementById("fvalida").addEventListener('submit', validateForm);
+  if (document.getElementById("formContact") != null) {
+    document.getElementById("formContact").addEventListener('submit', validateForm);
   }
 
-  if (document.getElementById("svalida") != null) {
-    document.getElementById("svalida").addEventListener('submit', validateSuscrip);
+  if (document.getElementById("formSuscript") != null) {
+    document.getElementById("formSuscript").addEventListener('submit', validateSuscrip);
   }
 });
 
@@ -47,15 +47,15 @@ async function validateForm(event) {
     return;
   }
 
-  const form = new FormData(event.target)
-  const response = await fetch(event.target.action, {
-    method: document.getElementById("fvalida").method,
+  const form = new FormData(this)
+  const response = await fetch(this.action, {
+    method: this.method,
     body:form,
     headers: {'Accept':'application/json'}
   })
 
   if(response.ok){
-    document.getElementById("fvalida").reset()
+    this.reset()
     swal({title: "¡Gracias por escribirnos!", text: "Te responderemos a la brevedad", icon:"success"})
   }else{swal({title: "No pudo enviar correo", text: "", icon:"error"})}
 } 
