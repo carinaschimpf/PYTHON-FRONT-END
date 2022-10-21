@@ -53,15 +53,8 @@ async function validateForm(event) {
     mensaje: msg
   }
 
-  let form = new FormData(this)
-
-  form.name = name;
-  form.email = email;
-  // form.message = "jdhf";
-
-  alert(form.message);
-
-  const response = await fetch(this.action, {
+  var form = new FormData(this)
+  var response = await fetch(this.action, {
     method: this.method, 
     body: form, 
     // body: JSON.stringify(_formData),
