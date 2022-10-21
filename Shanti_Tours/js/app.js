@@ -48,9 +48,9 @@ async function validateForm(event) {
   }
 
   let _formData = {
-    name: name, 
-    email: email,
-    message: message
+    name: "carina", 
+    email: "carina_schimpf@hotmail.com",
+    message: "mensaje constante"
   }
 
   // const form = new FormData(this)
