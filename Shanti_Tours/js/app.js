@@ -20,13 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
 async function validateForm(event) {
   event.preventDefault();
   
-  var name = document.getElementById('name').value;
+  var name = document.getElementById('f_name').value;
   if (name.length == 0) {
     swal({title: "", text: "Por favor ingrese su Nombre", icon:"warning"})
     return;
   }
 
-  var email = document.getElementById('email').value;
+  var email = document.getElementById('f_email').value;
   var atposition = email.indexOf("@");  
   var dotposition = email.lastIndexOf(".");  
 
@@ -35,7 +35,7 @@ async function validateForm(event) {
     return;
   }
 
-  var msg = document.getElementById('message').value;
+  var msg = document.getElementById('f_message').value;
   if (msg.length == 0) {
     swal({title: "", text: "Por favor ingrese su Mensaje", icon:"warning"})
     return;
@@ -53,9 +53,14 @@ async function validateForm(event) {
     mensaje: msg
   }
 
-  alert(msg);
+  let form = new FormData(this)
 
-  const form = new FormData(this)
+  form.name = _formData.nombre;
+  form.email = _formData.correo;
+  form.message = _formData.mensaje;
+
+  alert(form.message);
+
   const response = await fetch(this.action, {
     method: this.method, 
     body: form, 
