@@ -54,12 +54,16 @@ async function validateForm(event) {
     headers: {'Accept':'application/json'}
   })
 
+  alert(this.action);
+  alert(form);
+  alert(response);
+
   if(response.ok){
     this.reset()
     swal({title: "¡Gracias por escribirnos!", text: "Te responderemos a la brevedad", icon:"success"})
   } else {
     this.reset()
-    swal({title: "No se pudo enviar el correo", text: response.status, icon:"error"})
+    swal({title: "No se pudo enviar el correo", text: "", icon:"error"})
   }
 } 
 
