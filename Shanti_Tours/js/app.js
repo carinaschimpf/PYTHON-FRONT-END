@@ -47,15 +47,13 @@ async function validateForm(event) {
     return;
   }
 
-  var text_msg = document.getElementById('f_message').value;
-
   let _formData = {
     nombre: name,
     correo: email,
-    mensaje: text_msg
+    mensaje: msg
   }
 
-  alert(text_msg);
+  alert(msg);
 
   // const form = new FormData(this)
   const response = await fetch(this.action, {
