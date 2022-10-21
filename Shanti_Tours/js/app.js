@@ -48,7 +48,6 @@ async function validateForm(event) {
   }
 
   let _formData = {
-    subject: "Consulta",
     name: name, 
     email: email,
     message: message
