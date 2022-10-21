@@ -60,7 +60,7 @@ async function validateForm(event) {
     body: JSON.stringify(_formData),
     headers: {"Accept": "application/json; charset=UTF-8"}})
 
-  alert(this.action);
+  alert(message);
   alert(response.status);
   alert(response.ok);
 
