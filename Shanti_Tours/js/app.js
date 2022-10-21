@@ -54,13 +54,10 @@ async function validateForm(event) {
     headers: {'Accept':'application/json'}
   })
 
-  let result = await response.json();
-  alert(result.message);
-
-  // if(response.ok){
-  //   this.reset()
-  //   swal({title: "¡Gracias por escribirnos!", text: "Te responderemos a la brevedad", icon:"success"})
-  // }else{swal({title: "No pudo enviar correo", text: "", icon:"error"})}
+  if(response.ok){
+    this.reset()
+    swal({title: "¡Gracias por escribirnos!", text: "Te responderemos a la brevedad", icon:"success"})
+  }else{swal({title: "No se pudo enviar el correo", text: response.statusText, icon:"error"})}
 } 
 
 // Validacion de Formulario de Suscripcion
