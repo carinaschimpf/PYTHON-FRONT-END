@@ -6,60 +6,65 @@ function policies() {
 }
 
 // Validaciones de formularios de consulta y suscripcion
-document.addEventListener("DOMContentLoaded", function () {
-  if (document.getElementById("formContact") != null) {
-    document.getElementById("formContact").addEventListener('submit', validateForm);
-  }
+// document.addEventListener("DOMContentLoaded", function () {
+//   if (document.getElementById("formContact") != null) {
+//     document.getElementById("formContact").addEventListener('submit', validateForm);
+//   }
 
-  if (document.getElementById("formSuscript") != null) {
-    document.getElementById("formSuscript").addEventListener('submit', validateSuscrip);
-  }
-});
+//   if (document.getElementById("formSuscript") != null) {
+//     document.getElementById("formSuscript").addEventListener('submit', validateSuscrip);
+//   }
+// });
 
 // Validacion de Formulario de Consulta
+
+const $form = document.getElementById("formContact")
+$form.addEventListener('submit', validateForm)
+
 async function validateForm(event) {
   event.preventDefault();
   
-  var name = document.getElementById('f_name').value;
-  if (name.length == 0) {
-    swal({title: "", text: "Por favor ingrese su Nombre", icon:"warning"})
-    return;
-  }
+  // var name = document.getElementById('f_name').value;
+  // if (name.length == 0) {
+  //   swal({title: "", text: "Por favor ingrese su Nombre", icon:"warning"})
+  //   return;
+  // }
 
-  var email = document.getElementById('f_email').value;
-  var atposition = email.indexOf("@");  
-  var dotposition = email.lastIndexOf(".");  
+  // var email = document.getElementById('f_email').value;
+  // var atposition = email.indexOf("@");  
+  // var dotposition = email.lastIndexOf(".");  
 
-  if (email.length == 0  || atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length) {
-    swal({title: "", text: "Por favor ingrese un E-mail válido", icon:"warning"})
-    return;
-  }
+  // if (email.length == 0  || atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length) {
+  //   swal({title: "", text: "Por favor ingrese un E-mail válido", icon:"warning"})
+  //   return;
+  // }
 
-  var msg = document.getElementById('f_message').value;
-  if (msg.length == 0) {
-    swal({title: "", text: "Por favor ingrese su Mensaje", icon:"warning"})
-    return;
-  }
+  // var msg = document.getElementById('f_message').value;
+  // if (msg.length == 0) {
+  //   swal({title: "", text: "Por favor ingrese su Mensaje", icon:"warning"})
+  //   return;
+  // }
 
-  var policies = document.getElementById('f_agreement').checked;
-  if (policies == false) {
-    swal({title: "", text: "Debe aceptar políticas de privacidad", icon:"warning"})
-    return;
-  }
+  // var policies = document.getElementById('f_agreement').checked;
+  // if (policies == false) {
+  //   swal({title: "", text: "Debe aceptar políticas de privacidad", icon:"warning"})
+  //   return;
+  // }
 
-  let _formData = {
-    nombre: name,
-    correo: email,
-    mensaje: msg
-  }
+  // let _formData = {
+  //   name: name,
+  //   email: email,
+  //   message: msg
+  // }
 
-  var form = new FormData(this)
+  const form = new FormData(this)
   var response = await fetch(this.action, {
     method: this.method, 
     body: form, 
     // body: JSON.stringify(_formData),
-    // headers: {"Content-type": "application/json; charset=UTF-8"}})
-    headers: {"Accept": "application/json; charset=UTF-8"}})
+    // headers: {"Content-type": "application/json; charset=UTF-8"}}
+    headers: {'Accept': 'application/json'}}
+    )
 
   alert(response.status);
   alert(response.ok);
