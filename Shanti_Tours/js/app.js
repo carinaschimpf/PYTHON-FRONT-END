@@ -58,7 +58,7 @@ async function validateForm(event) {
     this.reset()
     swal({title: "¡Gracias por escribirnos!", text: "Te responderemos a la brevedad", icon:"success"})
   } else {
-    this.reset();
+    this.reset()
     swal({title: "No se pudo enviar el correo", text: response.status, icon:"error"})
   }
 } 
