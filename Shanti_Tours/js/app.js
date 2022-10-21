@@ -49,7 +49,7 @@ async function validateForm(event) {
 
   let _formData = {
     name: name,
-    email: "carina_schimpf@hotmail.com",
+    email: email,
     message: "mensaje constante"
   }
 
