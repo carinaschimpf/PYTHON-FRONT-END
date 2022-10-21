@@ -55,8 +55,8 @@ async function validateForm(event) {
 
   let form = new FormData(this)
 
-  form.name = _formData.nombre;
-  form.email = _formData.correo;
+  form.name = name;
+  form.email = email;
   // form.message = "jdhf";
 
   alert(form.message);
