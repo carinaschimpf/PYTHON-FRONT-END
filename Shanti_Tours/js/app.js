@@ -57,7 +57,10 @@ async function validateForm(event) {
   if(response.ok){
     this.reset()
     swal({title: "¡Gracias por escribirnos!", text: "Te responderemos a la brevedad", icon:"success"})
-  }else{swal({title: "No se pudo enviar el correo", text: response.statusText, icon:"error"})}
+  } else {
+    this.reset();
+    swal({title: "No se pudo enviar el correo", text: response.status, icon:"error"})
+  }
 } 
 
 // Validacion de Formulario de Suscripcion
