@@ -47,6 +47,8 @@ async function validateForm(event) {
     return;
   }
 
+  var text_msg = document.getElementById('f_text').value;
+
   var text_msg = msg.substring(0,msg.length);
 
   let _formData = {
