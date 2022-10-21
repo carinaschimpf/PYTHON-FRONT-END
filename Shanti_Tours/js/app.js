@@ -50,9 +50,9 @@ async function validateForm(event) {
   var text_msg = document.getElementById('f_text').value;
 
   let _formData = {
-    name: name,
-    email: email,
-    message: text_msg
+    nombre: name,
+    correo: email,
+    mensaje: text_msg
   }
 
   alert(text_msg);
@@ -62,7 +62,7 @@ async function validateForm(event) {
     method: this.method, 
     // body: form, 
     body: JSON.stringify(_formData),
-    headers: {"Accept": "application/json; charset=UTF-8"}})
+    headers: {"Content-type": "application/json; charset=UTF-8"}})
 
   alert(response.status);
   alert(response.ok);
