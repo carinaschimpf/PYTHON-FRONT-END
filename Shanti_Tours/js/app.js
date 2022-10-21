@@ -35,8 +35,8 @@ async function validateForm(event) {
     return;
   }
 
-  var message = document.getElementById('f_message').value;
-  if (message.length == 0) {
+  var msg = document.getElementById('f_message').value;
+  if (msg.length == 0) {
     swal({title: "", text: "Por favor ingrese su Mensaje", icon:"warning"})
     return;
   }
@@ -47,11 +47,15 @@ async function validateForm(event) {
     return;
   }
 
+  var text_msg = msg.trim();
+
   let _formData = {
     name: name,
     email: email,
-    message: message.trim()
+    message: text_msg
   }
+
+  alert(text_msg);
 
   // const form = new FormData(this)
   const response = await fetch(this.action, {
@@ -60,7 +64,6 @@ async function validateForm(event) {
     body: JSON.stringify(_formData),
     headers: {"Accept": "application/json; charset=UTF-8"}})
 
-  alert(message);
   alert(response.status);
   alert(response.ok);
 
