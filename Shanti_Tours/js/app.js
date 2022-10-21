@@ -56,15 +56,16 @@ async function validateForm(event) {
 
   alert(this.action);
   alert(form);
-  alert(response);
+  alert(response.status);
+  alert(response.ok);
 
-  if(response.ok){
-    this.reset()
-    swal({title: "¡Gracias por escribirnos!", text: "Te responderemos a la brevedad", icon:"success"})
-  } else {
-    this.reset()
-    swal({title: "No se pudo enviar el correo", text: "", icon:"error"})
-  }
+  // if(response.ok){
+  //   this.reset()
+  //   swal({title: "¡Gracias por escribirnos!", text: "Te responderemos a la brevedad", icon:"success"})
+  // } else {
+  //   this.reset()
+  //   swal({title: "No se pudo enviar el correo", text: "", icon:"error"})
+  // }
 } 
 
 // Validacion de Formulario de Suscripcion
