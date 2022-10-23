@@ -6,101 +6,90 @@ function policies() {
 }
 
 // Validaciones de formularios de consulta y suscripcion
-// document.addEventListener("DOMContentLoaded", function () {
-//   if (document.getElementById("formContact") != null) {
-//     document.getElementById("formContact").addEventListener('submit', validateForm);
-//   }
+document.addEventListener("DOMContentLoaded", function () {
+  if (document.getElementById("formContact") != null) {
+    document.getElementById("formContact").addEventListener('submit', validateForm);    
+  }
 
-//   if (document.getElementById("formSuscript") != null) {
-//     document.getElementById("formSuscript").addEventListener('submit', validateSuscrip);
-//   }
-// });
+  if (document.getElementById("formSuscript") != null) {
+    document.getElementById("formSuscript").addEventListener('submit', validateSuscrip);
+  }
+});
+
+const expresions = {
+	e_name: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	e_mail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+}
 
 // Validacion de Formulario de Consulta
-
-const $form = document.getElementById("formContact")
-$form.addEventListener('submit', validateForm)
-
 async function validateForm(event) {
+
   event.preventDefault();
   
-  // var name = document.getElementById('f_name').value;
-  // if (name.length == 0) {
-  //   swal({title: "", text: "Por favor ingrese su Nombre", icon:"warning"})
-  //   return;
-  // }
+  var name = this.name.value;
+  if(!expresions.e_name.test(name)) {
+    swal({title: "", text: "Por favor ingrese un nombre con caracteres válidos", icon:"error", dangerMode: true})
+    return;
+  }  
 
-  // var email = document.getElementById('f_email').value;
-  // var atposition = email.indexOf("@");  
-  // var dotposition = email.lastIndexOf(".");  
+  var email = this.email.value;
+  if(!expresions.e_mail.test(email)) {
+      swal({title: "", text: "Por favor ingrese un e-mail con formato válido", icon:"error", dangerMode: true})
+    return;
+  }
 
-  // if (email.length == 0  || atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length) {
-  //   swal({title: "", text: "Por favor ingrese un E-mail válido", icon:"warning"})
-  //   return;
-  // }
+  var msg = this.message.value;
+  if (msg.length == 0) {
+    swal({title: "", text: "Por favor ingrese su mensaje", icon:"error", dangerMode: true})
+    return;
+  }
 
-  // var msg = document.getElementById('f_message').value;
-  // if (msg.length == 0) {
-  //   swal({title: "", text: "Por favor ingrese su Mensaje", icon:"warning"})
-  //   return;
-  // }
-
-  // var policies = document.getElementById('f_agreement').checked;
-  // if (policies == false) {
-  //   swal({title: "", text: "Debe aceptar políticas de privacidad", icon:"warning"})
-  //   return;
-  // }
-
-  // let _formData = {
-  //   name: name,
-  //   email: email,
-  //   message: msg
-  // }
+  var policies = this.policies.checked;
+  if (policies == false) {
+    swal({title: "", text: "Debe aceptar las políticas de privacidad", icon:"error", dangerMode: true})
+    return;
+  }
 
   const form = new FormData(this)
   var response = await fetch(this.action, {
     method: this.method, 
     body: form, 
-    // body: JSON.stringify(_formData),
-    // headers: {"Content-type": "application/json; charset=UTF-8"}}
     headers: {'Accept': 'application/json'}}
     )
 
-  alert(response.status);
-  alert(response.ok);
-
-  // if(response.ok){
-  //   this.reset()
-  //   swal({title: "¡Gracias por escribirnos!", text: "Te responderemos a la brevedad", icon:"success"})
-  // } else {
-  //   this.reset()
-  //   swal({title: "No se pudo enviar el correo", text: "", icon:"error"})
-  // }
+  if(response.ok){
+    this.reset()
+    swal({title: "¡Gracias por escribirnos!", text: "Te responderemos a la brevedad", icon:"success"})
+  } else {
+    this.reset()
+    swal({title: "No se pudo enviar el correo", text: "", icon:"error"})
+  }
 } 
 
 // Validacion de Formulario de Suscripcion
 function validateSuscrip(event) {
   event.preventDefault();
-  var name = document.getElementById('s_name').value;
-  if (name.length == 0) {
-    swal({title: "", text: "Por favor ingrese su Nombre", icon:"warning"})
+
+  var name = this.name.value;
+  if(!expresions.e_name.test(name)) {
+    swal({title: "", text: "Por favor ingrese un nombre con caracteres válidos", icon:"error", dangerMode: true})
+    return;
+  }  
+
+  var email = this.email.value;
+  if(!expresions.e_mail.test(email)) {
+      swal({title: "", text: "Por favor ingrese un e-mail con formato válido", icon:"error", dangerMode: true})
     return;
   }
 
-  var email = document.getElementById('s_email').value;
-  if (email.length == 0) {
-    swal({title: "", text: "Por favor ingrese su E-mail", icon:"warning"})
-    return;
-  }
-
-  var policies = document.getElementById('s_agreement').checked;
+  var policies = this.policies.checked;
   if (policies == false) {
-    swal({title: "", text: "Debe aceptar políticas de privacidad", icon:"warning"})
+    swal({title: "", text: "Debe aceptar las políticas de privacidad", icon:"error", dangerMode: true})
     return;
   }
 
-  swal({title: "¡Gracias por suscribirte!", text: "", icon:"success"})
   this.reset()
+  swal({title: "¡Gracias por suscribirte!", text: "", icon:"success"})
 }
 
 // Tarjeta de viaje: la función crea el HTML recorriendo el array data_travel almacenado en data.js
@@ -141,7 +130,7 @@ function selectDetail(variable) //Función para obtener el valor de la variable 
   
 // Detalle de viaje: la función crea el HTML recorriendo el array data_travel almacenado en data.js y en base al parametro VIEWTRAVEL pasado en la url
 function travelDetail(i) {
-var detail=`    
+var detail=`
   <div class="contact-data">
     <img src="${data_travel[i].travelDtlImg}" width="100%" height="100%" alt="foto">
   </div>

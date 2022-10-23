@@ -305,27 +305,6 @@ input, textarea {
   border-radius: 0.25rem;
 }
 
-.btn {
-  background: rgba(127, 0, 55, 255);
-  width: 100%;
-  border: 0;
-  font-size: 2vh;
-  font-weight: bold;
-  letter-spacing: 0.5rem;
-  text-transform: uppercase;
-  color: #fff;
-  padding: 1em; 
-  border-radius: 0.5rem;  
-  transition:all .5s ease-out;
-}
-  
-.btn:hover, .btn:focus {
-  color: #fff;
-  letter-spacing: 1rem;
-  outline: 0;
-  transition:all .5s ease-in-out;
-}
-
 /* Formulario de contacto -  END */  
 
 /* Formulario de suscripción -  BEGIN */
@@ -372,6 +351,33 @@ iframe {padding-top: 20px;}
 
 /* Formulario de suscripción -  END */
 
+/* Botones para formulario BEGIN */
+
+.btn {
+  background: rgba(127, 0, 55, 255);
+  width: 100%;
+  border: 0;
+  font-size: 2vh;
+  font-weight: bold;
+  letter-spacing: .75rem;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 1em; 
+  border-radius: 0.5rem;  
+  box-shadow: 0px 6px 10px 0px gray;
+  transition: 100ms all ease;
+  cursor: pointer;
+}
+  
+.btn:active {
+  transform: scale(0.98);
+  letter-spacing: 0.5rem;
+  transition: .2s all;
+  box-shadow: 0px 0px 0px 0px gray;
+}
+
+/* Botones para formulario END */
+
 /* Datos copyright BEGIN */
 
 .copyrgt {
@@ -407,13 +413,6 @@ iframe {padding-top: 20px;}
   }
 
   .travel-card:hover {letter-spacing: 2px;}
-
-  .btn {transition: none;}
-
-  .btn:hover, .btn:focus {
-    transition: none;
-    letter-spacing: 0.5rem;
-  }
 
   aside .back, .btn, .travel-card {font-size: 1vh;}
 

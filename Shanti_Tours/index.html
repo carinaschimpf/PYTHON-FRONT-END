@@ -25,8 +25,8 @@
         <!-- menu hamburguesa -->
         <input type="checkbox" id="menu-check" style="width: auto;">
         <label id="menu" for="menu-check" style="width: auto;">
-            <span id="menu-open">&#9776;</span>
-            <span id="menu-close">X</span></label>
+            <span id="menu-open"><i class="fas fa-bars"></i></span>
+            <span id="menu-close"><i class="fas fa-times"></i></span></label>
         </label>
         
         <!----- Nav / Barra de Navegacion ------>
@@ -61,7 +61,7 @@
                         <li><a href="mailto:carina.schimpf@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> info@shantitours.com</a></li>
                         <li><a href="https://goo.gl/maps/71C66D1ScGZqf6pX9" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i> Avenida Directorio 2719</a></li>
                         <li><a href=""><i class="fa fa-phone" aria-hidden="true"></i> +54 11 3434-5858</a></li>
-                        <li><a href="https://web.whatsapp.com/send?phone=+5491130929221" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i> +54 9 11 3092-9221</a></li>                                
+                        <li><a href="https://wa.me/5491130929221?text=¡Hola!%20Quiero%20consultar%20por%20viajes" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i> +54 9 11 3092-9221</a></li>                        
                         <li><a href="https://www.facebook.com/carina.schimpf" target="_blank"><i class="fa fa-facebook-f"></i> shantitours</a></li>
                         <li><a href="https://www.instagram.com/cari_fs/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> shantitours</a></li>
                     </ul>
@@ -69,10 +69,10 @@
                 
                 <div class="form-data"> <!-- Formulario de suscripcion -->
                     <h3>Suscribite y recibí todas nuestras novedades</h3>
-                    <form id="formSuscript">
+                    <form novalidate id="formSuscript">
                         <p><input type="text" name="name" id="s_name" placeholder="Nombre"></p>
                         <p><input type="email" name="email" id="s_email" placeholder="Email"></p>
-                        <p class="full-width"><label for="checkbox" style="width: auto;" type="text" name="answer"><input style="width:auto" type="checkbox" unchecked name="agreement_policies" id="s_agreement"> He leído y acepto las <a href="javascript:policies()">políticas de privacidad</a></label></p>
+                        <p class="full-width"><label for="checkbox" style="width: auto;" type="text" name="answer"><input style="width:auto" type="checkbox" unchecked name="policies" id="s_policies"> He leído y acepto las <a href="javascript:policies()">políticas de privacidad</a></label></p>
                         <p class="full-width"><button class="btn" type="submit">Quiero suscribirme</button></p>
                     </form>
                 </div>

@@ -25,8 +25,8 @@
         <!-- Menu Hamburguesa -->
         <input type="checkbox" id="menu-check" style="width: auto;">
         <label id="menu" for="menu-check" style="width: auto;">
-            <span id="menu-open">&#9776;</span>
-            <span id="menu-close">X</span></label>
+            <span id="menu-open"><i class="fas fa-bars"></i></span>
+            <span id="menu-close"><i class="fas fa-times"></i></span></label>
         </label>
         
         <!-- Nav / Barra de Navegacion -->
@@ -46,21 +46,20 @@
                     <li><a href="mailto:carina.schimpf@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> info@shantitours.com</a></li>
                     <li><a href="https://goo.gl/maps/71C66D1ScGZqf6pX9" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i> Avenida Directorio 2719</a></li>
                     <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> +54 11 3434-5858</a></li>
-                    <li><a href="https://web.whatsapp.com/send?phone=+5491130929221" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i> +54 9 11 3092-9221</a></li>
-                <li><iframe class="cover" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.7917696993604!2d-58.4674006851941!3d-34.634702066644365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc9871a8b82e3%3A0xaef04c645f9cf1ad!2sAv.%20Directorio%202719%2C%20C1406HAD%20CABA!5e0!3m2!1ses-419!2sar!4v1660959150162!5m2!1ses-419!2sar" style="border:0;" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></li>
+                    <li><a href="https://wa.me/5491130929221?text=¡Hola!%20Quiero%20consultar%20por%20viajes" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i> +54 9 11 3092-9221</a></li>                        
+                    <li><iframe class="cover" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.7917696993604!2d-58.4674006851941!3d-34.634702066644365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc9871a8b82e3%3A0xaef04c645f9cf1ad!2sAv.%20Directorio%202719%2C%20C1406HAD%20CABA!5e0!3m2!1ses-419!2sar!4v1660959150162!5m2!1ses-419!2sar" style="border:0;" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></li>
                 </ul>
             </div>
                         
             <div class="form-data"> <!-- Formulario de consukta -->
                 <h3>Dejanos tu consulta</h3>
-                <form id="formContact" action="https://formspree.io/f/xaykdddl" method="POST">
+                <form novalidate id="formContact" action="https://formspree.io/f/xaykdddl" method="POST">                    
                     <p><label for="">Nombre</label><input type="text" name="name" id="f_name"></p>
                     <p><label for="">Email</label><input type="email" name="email" id="f_email"></p>
                     <p class="full-width"><label for="">Mensaje</label><textarea name="message" id="f_message" cols="30" rows="7"></textarea></p>
-                    <p class="full-width"><label for="checkbox" style="width: auto;" type="text" name="answer"><input style="width:auto" type="checkbox" unchecked name="agreement policies" id="f_agreement"> He leído y acepto las <a href="javascript:policies()">políticas de privacidad</a></label></p>
+                    <p class="full-width"><label for="checkbox" style="width: auto;" type="text" name="answer"><input style="width:auto" type="checkbox" unchecked name="policies" id="f_policies"> He leído y acepto las <a href="javascript:policies()">políticas de privacidad</a></label></p>
                     <p class="full-width"><button class="btn" type="submit">Enviar</button></p>
                 </form>
-                <!-- <a href="mailto:carina.schimpf@gmail.com" id="idform"></a> -->
             </div>
         </main>
     
