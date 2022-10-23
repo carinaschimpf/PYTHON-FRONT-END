@@ -414,10 +414,6 @@ iframe {padding-top: 20px;}
 
   .travel-card:hover {letter-spacing: 2px;}
 
-  .btn {letter-spacing: 0.5rem;}  
-
-  .btn:active {letter-spacing: 0.25rem;}  
-
   aside .back, .btn, .travel-card {font-size: 1vh;}
 
   aside .back {padding-top: 25%;}
@@ -430,7 +426,7 @@ iframe {padding-top: 20px;}
 
 @media (max-width: 760px) { 
 
-  .header-logo {justify-content:flex-start;}  
+ .header-logo {justify-content:flex-start;}  
 
   @keyframes slidein {
     from {letter-spacing: 0.1rem;}
@@ -460,7 +456,7 @@ iframe {padding-top: 20px;}
     background-color: rgba(244, 242, 227, 255);
     position: absolute;
     right: 0.5em;
-    top:.7em;
+    top: 0.7em;
     z-index: 9999;
   }
   
@@ -505,6 +501,10 @@ iframe {padding-top: 20px;}
     width: 50%;
     height: 50%;
   }
+
+  .btn {letter-spacing: 0.5rem;}  
+
+  .btn:active {letter-spacing: 0.25rem;}  
 
   .copyrgt{font-size: 1.2vh;}
 }
