@@ -414,6 +414,10 @@ iframe {padding-top: 20px;}
 
   .travel-card:hover {letter-spacing: 2px;}
 
+  .btn {letter-spacing: 0.5rem;}  
+
+  .btn:active {letter-spacing: 0.25rem;}  
+
   aside .back, .btn, .travel-card {font-size: 1vh;}
 
   aside .back {padding-top: 25%;}
