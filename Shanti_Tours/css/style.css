@@ -423,7 +423,7 @@ iframe {padding-top: 20px;}
     margin-bottom: 10px;
   }
 
-  .wrap-content>.contact-data:nth-child(1) {
+  .wrap-content>.contact-data>ul:nth-child(1) {
     grid-row: 2;
   }
   .wrap-content>.form-data:nth-child(2) {
