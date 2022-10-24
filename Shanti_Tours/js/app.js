@@ -131,7 +131,7 @@ function selectDetail(variable) //Función para obtener el valor de la variable 
 // Detalle de viaje: la función crea el HTML recorriendo el array data_travel almacenado en data.js y en base al parametro VIEWTRAVEL pasado en la url
 function travelDetail(i) {
 var detail=`
-  <div class="contact-data">
+  <div class="content-data">
     <img src="${data_travel[i].travelDtlImg}" width="100%" height="100%" alt="foto">
   </div>
   <div class="travel-detail">
